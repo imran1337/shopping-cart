@@ -26,10 +26,10 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i id="firstItemDecrease" class="fas fa-minus"></i></button>
-                           <input type="text" id="firstItemInputValue" class="form-control text-center" value="1">
+                           <input type="text" id="firstItemInputValue" class="form-control text-center" value="0" readonly>
                            <button class="btn btn-default"><i id="firstItemIncrease" class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$<span id="PhonePrize">1219</span></h5>
+                        <h5>$<span id="phonePrize">0</span></h5>
                         <img src="images/remove.png" alt="" id="firstRemove" class="remove-item">
                      </div>
                   </div>
@@ -44,11 +44,10 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i id="secondItemDecrease" class="fas fa-minus"></i></button>
-                           <input type="text" id="secondItemInputValue" class="form-control text-center" value="1">
+                           <input type="text" id="secondItemInputValue" class="form-control text-center" value="0" readonly>
                            <button class="btn btn-default"><i id="secondItemIncrease" class="fas fa-plus"></i></button>
-
                         </div>
-                        <h5>$<span id="casePrize">59</span></h5>
+                        <h5>$<span id="casePrize">0</span></h5>
                         <img src="images/remove.png" alt="" id="secondRemove" class="remove-item">
                      </div>
                   </div>
@@ -64,14 +63,14 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$<span id="subTotal">1,278</span></h5>
-                        <h5>$<span id="checkOutTax">63.90</span></h5>
-                        <h5>$<span id="totalWithTax">1341.9</span></h5>
+                        <h5>$<span id="subTotal">0</span></h5>
+                        <h5>$<span id="checkOutTax">0</span></h5>
+                        <h5>$<span id="totalWithTax">0</span></h5>
                      </div>
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button type="button" id="checkOut" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>

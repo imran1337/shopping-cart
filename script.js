@@ -1,5 +1,5 @@
-  // item quantity increase function
-  function handleItemQuantityPrice(idName, inputName, phoneId, productPrice,isIncrease) {
+// item quantity increase function
+  function handleItemQuantityPrice(idName, inputName, productId, productPrice,isIncrease) {
       document.getElementById(idName).addEventListener("click", function () {
       let itemQuantityCount = parseInt(document.getElementById(inputName).value);
       if (isIncrease == false) {
@@ -7,15 +7,15 @@
           } else {
             document.getElementById(inputName).value = ++itemQuantityCount;
           }
-      productMoneyUpdater(phoneId, itemQuantityCount, productPrice);
+      productMoneyUpdater(productId, itemQuantityCount, productPrice);
       checkOutPrizeUpdater();
     });
   }
 // item increase
-  handleItemQuantityPrice("firstItemIncrease","firstItemInputValue","PhonePrize","1219",true);
+  handleItemQuantityPrice("firstItemIncrease","firstItemInputValue","phonePrize","1219",true);
   handleItemQuantityPrice("secondItemIncrease","secondItemInputValue","casePrize","59",true);
   //item decrease
-  handleItemQuantityPrice("firstItemDecrease","firstItemInputValue","PhonePrize","1219",false);
+  handleItemQuantityPrice("firstItemDecrease","firstItemInputValue","phonePrize","1219",false);
   handleItemQuantityPrice("secondItemDecrease","secondItemInputValue","casePrize","59",false);
   // multiply to price update
   function productMoneyUpdater(productPriceId, itemInputVale, productPrice) {
@@ -23,7 +23,7 @@
   }
   // checkout working area
   function checkOutPrizeUpdater() {
-      let phoneTotalPrice = parseInt(document.getElementById('PhonePrize').innerText) + parseInt(document.getElementById('casePrize').innerText);
+      let phoneTotalPrice = parseInt(document.getElementById('phonePrize').innerText) + parseInt(document.getElementById('casePrize').innerText);
       document.getElementById('subTotal').innerText = phoneTotalPrice
       // taxCalculator
       const taxValue = (5 / 100).toFixed(2);
@@ -41,5 +41,14 @@
           document.getElementById(deleteParentId).style.display = 'none';
       })
   }
-  itemsRemove("firstRemove",'cartItemOne','firstItemInputValue','PhonePrize')
+  itemsRemove("firstRemove",'cartItemOne','firstItemInputValue','phonePrize')
   itemsRemove('secondRemove','cartItemTwo','secondItemInputValue','casePrize')
+  // checkout Button || click to check out
+  document.getElementById('checkOut').addEventListener('click', function (event) {
+    document.getElementById('phonePrize').innerText = 0;
+          document.getElementById('casePrize').innerText = 0;
+          document.getElementById("firstItemInputValue").value = 0;
+          document.getElementById("secondItemInputValue").value = 0;
+          checkOutPrizeUpdater();
+          alert('Check Out Successful!')
+  })
