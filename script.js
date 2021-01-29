@@ -1,5 +1,5 @@
   // item quantity increase function
-  function handleItemQuantity(idName, inputName, phoneId, productPrice,isIncrease) {
+  function handleItemQuantityPrice(idName, inputName, phoneId, productPrice,isIncrease) {
       document.getElementById(idName).addEventListener("click", function () {
       let itemQuantityCount = parseInt(document.getElementById(inputName).value);
       if (isIncrease == false) {
@@ -12,11 +12,11 @@
     });
   }
 // item increase
-  handleItemQuantity("firstItemIncrease","firstItemInputValue","PhonePrize","1219",true);
-  handleItemQuantity("secondItemIncrease","secondItemInputValue","casePrize","59",true);
+  handleItemQuantityPrice("firstItemIncrease","firstItemInputValue","PhonePrize","1219",true);
+  handleItemQuantityPrice("secondItemIncrease","secondItemInputValue","casePrize","59",true);
   //item decrease
-  handleItemQuantity("firstItemDecrease","firstItemInputValue","PhonePrize","1219",false);
-  handleItemQuantity("secondItemDecrease","secondItemInputValue","casePrize","59",false);
+  handleItemQuantityPrice("firstItemDecrease","firstItemInputValue","PhonePrize","1219",false);
+  handleItemQuantityPrice("secondItemDecrease","secondItemInputValue","casePrize","59",false);
   // multiply to price update
   function productMoneyUpdater(productPriceId, itemInputVale, productPrice) {
     document.getElementById(productPriceId).innerText = itemInputVale * parseInt(productPrice);
